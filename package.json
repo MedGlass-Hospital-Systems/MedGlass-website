@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "predev": "npx only-allow pnpm",
+    "prebuild": "npx only-allow pnpm",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
