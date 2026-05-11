@@ -7,7 +7,6 @@ import { TopNav } from "../components/layout/TopNav";
 export default function LandingPage() {
   return (
     <>
-    <TopNav></TopNav>
       {/* HERO */}
       <section className="px-4 md:px-8 pt-20 pb-24 max-w-7xl mx-auto w-full">
         <div className="text-center max-w-3xl mx-auto">
@@ -25,10 +24,10 @@ export default function LandingPage() {
             des DRH d'établissements de santé français.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button href="/dashboard" size="lg" icon="arrow_forward" iconPosition="right">
+            <Button to="/dashboard" size="lg" icon="arrow_forward" iconPosition="right">
               Essayer la démo
             </Button>
-            <Button href="/contact" variant="secondary" size="lg" icon="play_circle">
+            <Button to="/contact" variant="secondary" size="lg" icon="play_circle">
               Demander une présentation
             </Button>
           </div>
@@ -265,10 +264,10 @@ export default function LandingPage() {
           Migration assistée depuis votre outil actuel.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button href="/dashboard" size="lg" icon="arrow_forward" iconPosition="right">
+          <Button to="/dashboard" size="lg" icon="arrow_forward" iconPosition="right">
             Lancer la démo
           </Button>
-          <Button href="/contact" variant="secondary" size="lg">
+          <Button to="/contact" variant="secondary" size="lg">
             Parler à un expert
           </Button>
         </div>

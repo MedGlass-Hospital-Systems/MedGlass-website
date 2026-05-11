@@ -99,7 +99,7 @@ export default function PricingPage() {
             </ul>
             
             <Button 
-              href="/contact" 
+              to="/contact" 
               variant={p.highlighted ? "primary" : "secondary"} 
               size="lg"
               className={`w-full font-bold ${p.highlighted ? "shadow-lg shadow-primary/40 text-lg py-6" : ""}`}

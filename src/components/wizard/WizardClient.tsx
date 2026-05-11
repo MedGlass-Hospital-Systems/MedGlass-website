@@ -90,7 +90,7 @@ export function WizardClient() {
             {step === 4 ? "Générer le planning" : "Suivant"}
           </Button>
         ) : (
-          <Button href="/planning" icon="check">
+          <Button to="/planning" icon="check">
             Publier le planning
           </Button>
         )}

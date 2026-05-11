@@ -31,11 +31,10 @@ const shiftLabels: Record<string, string> = {
 };
 
 export function ScheduleGrid({ staff, shifts, weekDates }: ScheduleGridProps) {
-  const totalCols = weekDates.length + 2;
 
   return (
     <div className="overflow-auto">
-      <div className="min-w-[860px]">
+      <div className="min-w-215">
         <div
           className="grid gap-1 mb-3"
           style={{ gridTemplateColumns: `2fr repeat(${weekDates.length}, 1fr)` }}
