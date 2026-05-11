@@ -1,0 +1,58 @@
+name: Deploy to GitHub Pages
+
+# Le script se lance à chaque push sur la branche main
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch: # Permet aussi de lancer le script manuellement depuis GitHub
+
+# Permissions nécessaires pour déployer sur GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# On s'assure qu'un seul déploiement tourne à la fois
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Installation de pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9 # Utilise la version 9 de pnpm
+
+      - name: Configuration de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Installation des dépendances
+        run: pnpm install --frozen-lockfile
+
+      - name: Build du projet Vite
+        run: pnpm run build
+
+      - name: Upload de l'artefact (dossier dist)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Vite génère le build dans le dossier "dist"
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Déploiement sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
