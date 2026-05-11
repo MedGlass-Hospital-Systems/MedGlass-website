@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* 1. On connecte Tailwind à nos variables CSS dynamiques */
+@theme {
+  --color-primary: var(--primary);
+  --color-background: var(--bg-main);
+  --color-surface-container: var(--bg-surface);
+  --color-on-surface-variant: var(--text-muted);
+}
+
+/* 2. On définit les couleurs pour le mode clair et le mode sombre */
+@layer base {
+  :root {
+    /* Mode Clair (par défaut) */
+    --primary: #0284c7;
+    --bg-main: #f8fafc;
+    --bg-surface: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+  }
+
+  .dark {
+    /* Mode Sombre (inspiré de tes maquettes) */
+    --primary: #3b82f6; /* Bleu plus vif pour ressortir sur le sombre */
+    --bg-main: #0b1120; /* Le fond très sombre de ta maquette */
+    --bg-surface: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --glass-bg: rgba(15, 23, 42, 0.6); /* Fond semi-transparent sombre */
+    --glass-border: rgba(255, 255, 255, 0.08); /* Bordure très subtile */
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* 3. Effets Glassmorphism qui s'adaptent automatiquement */
+@layer utilities {
+  .text-gradient {
+    background-image: linear-gradient(to right, var(--primary), #2dd4bf);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .glass-strong {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+}
