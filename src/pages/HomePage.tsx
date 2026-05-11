@@ -2,7 +2,6 @@ import { GlassPanel } from "../components/ui/GlassPanel";
 import { Button } from "../components/ui/Button";
 import { Icon } from "../components/layout/Icon";
 import { Badge } from "../components/ui/Badge";
-import { TopNav } from "../components/layout/TopNav";
 
 export default function LandingPage() {
   return (
@@ -86,7 +85,7 @@ export default function LandingPage() {
                                 ? tone === "primary"
                                   ? "bg-primary/15 border border-primary/20"
                                   : "bg-tertiary/15 border border-tertiary/20"
-                                : "bg-white/[0.02]"
+                                : "bg-white/2"
                             }`}
                           />
                         );
