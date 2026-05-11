@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter> {/* <-- Enveloppe ton App */}
+    <BrowserRouter basename="/MedGlass-website/">
       <App />
     </BrowserRouter>
   </StrictMode>,
