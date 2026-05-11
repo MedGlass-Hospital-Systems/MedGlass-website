@@ -8,6 +8,7 @@ import FeaturesPage from './pages/FeaturesPage'
 import LoginPage from './pages/LoginPage'
 import PricingPage from './pages/PricingPage'
 import { TopNav } from './components/layout/TopNav'
+import { Footer } from './components/layout/Footer'
 
 
 function App() {

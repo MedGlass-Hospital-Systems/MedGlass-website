@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
@@ -12,25 +13,25 @@ export function Footer() {
         <div>
           <h4 className="font-label-caps text-label-caps text-on-surface mb-3">Produit</h4>
           <ul className="space-y-2 text-body-sm text-on-surface-variant">
-            <li><Link href="/#fonctionnalites" className="hover:text-primary">Fonctionnalités</Link></li>
-            <li><Link href="/pricing" className="hover:text-primary">Tarifs</Link></li>
-            <li><Link href="/#securite" className="hover:text-primary">Sécurité & RGPD</Link></li>
+            <li><Link to="/#fonctionnalites" className="hover:text-primary">Fonctionnalités</Link></li>
+            <li><Link to="/pricing" className="hover:text-primary">Tarifs</Link></li>
+            <li><Link to="/#securite" className="hover:text-primary">Sécurité & RGPD</Link></li>
           </ul>
         </div>
         <div>
           <h4 className="font-label-caps text-label-caps text-on-surface mb-3">Ressources</h4>
           <ul className="space-y-2 text-body-sm text-on-surface-variant">
-            <li><Link href="/help" className="hover:text-primary">Centre d'aide</Link></li>
-            <li><Link href="/contact" className="hover:text-primary">Contact</Link></li>
-            <li><Link href="/blog" className="hover:text-primary">Blog</Link></li>
+            <li><Link to="/help" className="hover:text-primary">Centre d'aide</Link></li>
+            <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
+            <li><Link to="/blog" className="hover:text-primary">Blog</Link></li>
           </ul>
         </div>
         <div>
           <h4 className="font-label-caps text-label-caps text-on-surface mb-3">Légal</h4>
           <ul className="space-y-2 text-body-sm text-on-surface-variant">
-            <li><Link href="/legal/privacy" className="hover:text-primary">Confidentialité</Link></li>
-            <li><Link href="/legal/terms" className="hover:text-primary">CGU</Link></li>
-            <li><Link href="/legal/security" className="hover:text-primary">Sécurité des données</Link></li>
+            <li><Link to="/legal/privacy" className="hover:text-primary">Confidentialité</Link></li>
+            <li><Link to="/legal/terms" className="hover:text-primary">CGU</Link></li>
+            <li><Link to="/legal/security" className="hover:text-primary">Sécurité des données</Link></li>
           </ul>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import type { Staff, Service } from "@/lib/types/planning";
+import type { Staff, Service } from "../../lib/types/planning";
 
 export const services: Service[] = [
   { id: "chir-gen", name: "Chirurgie générale", shortName: "Chir. Gén.", staffCount: 24, color: "primary" },

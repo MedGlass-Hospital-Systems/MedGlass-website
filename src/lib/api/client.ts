@@ -2,8 +2,8 @@
  * Couche API centralisée. Aujourd'hui : retourne les mocks.
  * Demain : remplacer par fetch vers le backend (REST/tRPC), sans toucher aux pages.
  */
-import { staff, services } from "@/lib/mocks/staff";
-import { currentWeekShifts, planningGaps, leaveRequests, swapRequests } from "@/lib/mocks/shifts";
+import { staff, services } from "../../lib/mocks/staff";
+import { currentWeekShifts, planningGaps, leaveRequests, swapRequests } from "../../lib/mocks/shifts";
 
 export const api = {
   staff: {

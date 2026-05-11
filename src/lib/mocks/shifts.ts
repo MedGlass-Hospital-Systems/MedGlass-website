@@ -1,4 +1,4 @@
-import type { Shift, PlanningGap, LeaveRequest, SwapRequest } from "@/lib/types/planning";
+import type { Shift, PlanningGap, LeaveRequest, SwapRequest } from "../../lib/types/planning";
 
 export const currentWeekShifts: Shift[] = [
   // Dr. Jenkins (s1) — Practitioner

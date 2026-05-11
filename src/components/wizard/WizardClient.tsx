@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { GlassPanel } from "@/components/ui/GlassPanel";
-import { Button } from "@/components/ui/Button";
-import { Icon } from "@/components/layout/Icon";
-import { Badge } from "@/components/ui/Badge";
-import { cn } from "@/lib/utils/cn";
+import { GlassPanel } from "../ui/GlassPanel";
+import { Button } from "../ui/Button";
+import { Icon } from "../layout/Icon";
+import { Badge } from "../ui/Badge";
+import { cn } from "../../lib/utils/cn";
 
 const steps = [
   { id: 1, title: "Service & période", icon: "tune" },
