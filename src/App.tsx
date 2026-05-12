@@ -1,4 +1,3 @@
-
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 
@@ -9,21 +8,16 @@ import LoginPage from './pages/LoginPage'
 import PricingPage from './pages/PricingPage'
 import { TopNav } from './components/layout/TopNav'
 
-
 function App() {
-
   return (
     <>
-      <TopNav/>    
+      <TopNav />
       <Routes>
-        {/* Route principale correspondante à "/" */}
         <Route path="/" element={<HomePage />} />
-        <Route path="/contact" element={< ContactPage/>} /> 
-        <Route path="/features" element={< FeaturesPage/>} /> 
-        <Route path="/login" element={< LoginPage/>} /> 
-        <Route path="/pricing" element={< PricingPage/>} /> 
-
-       {/* <Route path="*" element={<NotFoundPage />} />*/}
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
       </Routes>
     </>
   )

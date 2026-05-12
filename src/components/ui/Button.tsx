@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { cn } from "../../lib/utils/cn";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-
 type Variant = "primary" | "secondary" | "ghost" | "danger";
 type Size = "sm" | "md" | "lg";
 
@@ -28,14 +27,14 @@ const sizeClasses: Record<Size, string> = {
   lg: "px-6 py-3 text-body-base font-semibold",
 };
 
-interface AnchorProps extends BaseProps, Omit<React.ComponentProps<typeof Link>, keyof BaseProps> {
-  href: string;
+interface LinkProps extends BaseProps, Omit<React.ComponentProps<typeof Link>, keyof BaseProps | "to"> {
+  to: string;
 }
 interface ButtonElProps extends BaseProps, Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps> {
-  href?: undefined;
+  to?: never;
 }
 
-export function Button(props: AnchorProps | ButtonElProps) {
+export function Button(props: LinkProps | ButtonElProps) {
   const { variant = "primary", size = "md", icon, iconPosition = "left", className, children, ...rest } = props;
   const cls = cn(
     "inline-flex items-center justify-center gap-2 rounded-full transition-all focus-ring",
@@ -52,9 +51,9 @@ export function Button(props: AnchorProps | ButtonElProps) {
     </>
   );
 
-  if ("href" in props && props.href) {
+  if ("to" in props && props.to) {
     return (
-      <Link className={cls} {...(rest as React.ComponentProps<typeof Link>)} to={props.href}>
+      <Link className={cls} to={props.to} {...(rest as Omit<React.ComponentProps<typeof Link>, "to" | "className">)}>
         {content}
       </Link>
     );

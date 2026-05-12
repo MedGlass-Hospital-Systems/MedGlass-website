@@ -9,10 +9,6 @@ export default function LandingPage() {
       {/* HERO */}
       <section className="px-4 md:px-8 pt-20 pb-24 max-w-7xl mx-auto w-full">
         <div className="text-center max-w-3xl mx-auto">
-          <Badge tone="primary" className="mb-6">
-            <Icon name="bolt" className="text-[14px] mr-1" />
-            Nouveau · Génération de planning par IA
-          </Badge>
           <h1 className="text-[44px] md:text-[64px] leading-[1.05] font-bold tracking-tight mb-6">
             La planification médicale,{" "}
             <span className="text-gradient">enfin sereine.</span>
@@ -23,7 +19,7 @@ export default function LandingPage() {
             des DRH d'établissements de santé français.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button to="/dashboard" size="lg" icon="arrow_forward" iconPosition="right">
+            <Button to="app.medglass.fr/dashboard" size="lg" icon="arrow_forward" iconPosition="right">
               Essayer la démo
             </Button>
             <Button to="/contact" variant="secondary" size="lg" icon="play_circle">
@@ -100,21 +96,21 @@ export default function LandingPage() {
       </section>
 
       {/* KEY METRICS */}
-      <section className="px-4 md:px-8 py-16 max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { v: "120+", l: "Établissements clients" },
-            { v: "8 500", l: "Soignants planifiés" },
-            { v: "-72%", l: "Temps de planification" },
-            { v: "99,98%", l: "Disponibilité" },
-          ].map((s) => (
-            <div key={s.l} className="text-center">
-              <div className="text-[40px] font-bold text-gradient leading-none mb-2">{s.v}</div>
-              <div className="text-body-sm text-on-surface-variant">{s.l}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/*<section className="px-4 md:px-8 py-16 max-w-7xl mx-auto w-full">*/}
+      {/*  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">*/}
+      {/*    {[*/}
+      {/*      { v: "120+", l: "Établissements clients" },*/}
+      {/*      { v: "8 500", l: "Soignants planifiés" },*/}
+      {/*      { v: "-72%", l: "Temps de planification" },*/}
+      {/*      { v: "99,98%", l: "Disponibilité" },*/}
+      {/*    ].map((s) => (*/}
+      {/*      <div key={s.l} className="text-center">*/}
+      {/*        <div className="text-[40px] font-bold text-gradient leading-none mb-2">{s.v}</div>*/}
+      {/*        <div className="text-body-sm text-on-surface-variant">{s.l}</div>*/}
+      {/*      </div>*/}
+      {/*    ))}*/}
+      {/*  </div>*/}
+      {/*</section>*/}
 
       {/* FEATURES */}
       <section id="fonctionnalites" className="px-4 md:px-8 py-20 max-w-7xl mx-auto w-full">
@@ -263,7 +259,7 @@ export default function LandingPage() {
           Migration assistée depuis votre outil actuel.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button to="/dashboard" size="lg" icon="arrow_forward" iconPosition="right">
+          <Button to="app.medglass.fr/dashboard" size="lg" icon="arrow_forward" iconPosition="right">
             Lancer la démo
           </Button>
           <Button to="/contact" variant="secondary" size="lg">
