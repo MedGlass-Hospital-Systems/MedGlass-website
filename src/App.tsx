@@ -9,6 +9,7 @@ import PricingPage from './pages/PricingPage'
 import { TopNav } from './components/layout/TopNav'
 import { Footer } from './components/layout/Footer'
 import { AmbientBackground } from './components/layout/AmbientBackground'
+import LegalNoticesPage from './pages/LegalPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -31,6 +32,8 @@ function App() {
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/legal" element={<LegalNoticesPage />} />
+
         </Routes>
       </main>
       <Footer />

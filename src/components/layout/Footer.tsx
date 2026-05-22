@@ -14,15 +14,15 @@ const resourceLinks = [
 ];
 
 const legalLinks = [
-  { to: "/legal/privacy", label: "Confidentialité" },
+  { to: "/legal", label: "Confidentialité" },
   { to: "/legal/terms", label: "CGU" },
   { to: "/legal/security", label: "Sécurité des données" },
 ];
 
 const certifications = [
-  { icon: "verified_user", label: "Hébergement HDS" },
-  { icon: "lock", label: "RGPD" },
-  { icon: "shield", label: "ISO 27001" },
+  { icon: "verified_user", label: "Hébergement HDS" , to:"https://www.ovhcloud.com/fr/compliance/hds/"},
+  { icon: "lock", label: "RGPD" , to:"https://www.cnil.fr/fr/comprendre-le-rgpd/les-six-grands-principes-du-rgpd" },
+  { icon: "shield", label: "ISO 27001", to:"https://www.ovhcloud.com/fr/compliance/iso-27001-27017-27018/" },
 ];
 
 export function Footer() {
@@ -50,8 +50,9 @@ export function Footer() {
                   key={c.label}
                   className="glass-chip rounded-full px-3 py-1.5 flex items-center gap-1.5 text-[11px] text-on-surface-variant"
                 >
+
                   <Icon name={c.icon} className="text-success text-[14px]" filled />
-                  {c.label}
+                  <a href={c.to}>{c.label}</a>
                 </div>
               ))}
             </div>
