@@ -34,8 +34,8 @@ export function TopNav() {
     >
       <div className="px-5 md:px-10 h-22 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <span className="relative w-9 h-9 rounded-xl bg-linear-to-br from-primary/30 to-tertiary/20 border border-primary/30 flex items-center justify-center overflow-hidden">
-            <Icon name="local_hospital" className="text-primary text-[20px] relative z-10" filled />
+          <span className="relative w-15 h-15 rounded-xl flex items-center justify-center overflow-hidden">
+            <img src="/logo.png"></img>
             <span className="absolute inset-0 bg-primary/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
           </span>
           <span className="font-bold text-[30px] tracking-tight text-on-surface">

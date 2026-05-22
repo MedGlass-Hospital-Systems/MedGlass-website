@@ -131,15 +131,15 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-5 pt-2 text-[13px] text-on-surface-variant">
               <span className="flex items-center gap-2">
                 <Icon name="check_circle" className="text-success text-[18px]" filled />
-                Hébergement HDS
+                <a href="https://www.ovhcloud.com/fr/compliance/hds/"> Herbergement certifié HDS</a>
               </span>
               <span className="flex items-center gap-2">
                 <Icon name="check_circle" className="text-success text-[18px]" filled />
-                Conforme RGPD
+                <a href="https://www.cnil.fr/fr/comprendre-le-rgpd/les-six-grands-principes-du-rgpd">Conforme RGPD</a>
               </span>
               <span className="flex items-center gap-2">
                 <Icon name="check_circle" className="text-success text-[18px]" filled />
-                Sans engagement
+                <a href="https://www.ovhcloud.com/fr/compliance/iso-27001-27017-27018/">Sans engagement</a>
               </span>
             </div>
           </motion.div>

@@ -34,9 +34,9 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           <div className="col-span-2 md:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-2.5">
-              <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary/30 to-tertiary/20 border border-primary/30 flex items-center justify-center">
-                <Icon name="local_hospital" className="text-primary text-[20px]" filled />
-              </span>
+              <span className="w-12 h-12 rounded-xl flex items-center justify-center">
+                <img src="/logo.png" alt="" />       
+             </span>
               <span className="font-bold text-[18px] tracking-tight text-on-surface">
                 Med<span className="text-primary">Glass</span>
               </span>
