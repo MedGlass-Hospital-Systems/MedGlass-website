@@ -32,13 +32,13 @@ export function TopNav() {
         scrolled ? "glass-nav shadow-[0_8px_32px_rgba(0,0,0,0.25)]" : "bg-transparent border-b border-transparent",
       )}
     >
-      <div className="px-5 md:px-10 h-16 flex items-center justify-between">
+      <div className="px-5 md:px-10 h-22 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <span className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-primary/30 to-tertiary/20 border border-primary/30 flex items-center justify-center overflow-hidden">
+          <span className="relative w-9 h-9 rounded-xl bg-linear-to-br from-primary/30 to-tertiary/20 border border-primary/30 flex items-center justify-center overflow-hidden">
             <Icon name="local_hospital" className="text-primary text-[20px] relative z-10" filled />
             <span className="absolute inset-0 bg-primary/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
           </span>
-          <span className="font-bold text-[18px] tracking-tight text-on-surface">
+          <span className="font-bold text-[30px] tracking-tight text-on-surface">
             Med<span className="text-primary">Glass</span>
           </span>
         </Link>
@@ -51,7 +51,7 @@ export function TopNav() {
                 key={link.to}
                 to={link.to}
                 className={cn(
-                  "relative px-4 py-2 rounded-full text-[14px] transition-all duration-200",
+                  "relative px-4 py-2 rounded-full text-[22px] transition-all duration-200",
                   active
                     ? "text-primary bg-primary/10"
                     : "text-on-surface-variant hover:text-on-surface hover:bg-white/5",
@@ -95,7 +95,7 @@ export function TopNav() {
       <div
         className={cn(
           "md:hidden glass-nav overflow-hidden transition-[max-height,opacity] duration-300 ease-out",
-          open ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0",
+          open ? "max-h-100 opacity-100" : "max-h-0 opacity-0",
         )}
       >
         <nav className="px-4 py-4 flex flex-col gap-1">
