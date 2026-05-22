@@ -151,8 +151,8 @@ export default function HomePage() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative animate-float-tilt"
           >
-            <div className="absolute -inset-8 bg-gradient-to-tr from-primary/20 via-tertiary/15 to-secondary/20 blur-3xl rounded-full opacity-70 animate-pulse-glow" />
-            <GlassPanel variant="elevated" className="relative p-3 rounded-[28px]">
+            <div className="absolute -inset-8 bg-linear-to-tr from-primary/20 via-tertiary/15 to-secondary/20 blur-3xl rounded-full opacity-70 animate-pulse-glow" />
+            <GlassPanel variant="elevated" className="relative p-3 rounded-2xl">
               <div className="rounded-2xl bg-surface-container-low/50 border border-outline-variant/30 overflow-hidden">
                 <div className="flex items-center gap-2 px-4 py-3 border-b border-outline-variant/30">
                   <span className="w-2.5 h-2.5 rounded-full bg-error/60" />
@@ -167,7 +167,7 @@ export default function HomePage() {
                       <span className="text-[12px] font-semibold text-on-surface">Capacité du service</span>
                       <Icon name="insights" className="text-primary text-[18px]" />
                     </div>
-                    <div className="h-20 relative overflow-hidden rounded-lg bg-gradient-to-b from-primary/10 to-transparent">
+                    <div className="h-20 relative overflow-hidden rounded-lg bg-linear-to-b from-primary/10 to-transparent">
                       <svg viewBox="0 0 100 30" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
                         <defs>
                           <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
@@ -211,7 +211,7 @@ export default function HomePage() {
                         return (
                           <div
                             key={i}
-                            className={`h-6 rounded ${filled ? `${tone} border` : "bg-white/[0.03] border border-white/5"}`}
+                            className={`h-6 rounded ${filled ? `${tone} border` : "bg-white/3 border border-white/5"}`}
                           />
                         );
                       })}
@@ -272,7 +272,7 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 relative">
           {/* Connecting line — desktop only */}
-          <div className="hidden md:block absolute top-12 left-[16.66%] right-[16.66%] h-px bg-gradient-to-r from-transparent via-outline-variant/50 to-transparent" aria-hidden />
+          <div className="hidden md:block absolute top-12 left-[16.66%] right-[16.66%] h-px bg-linear-to-r from-transparent via-outline-variant/50 to-transparent" aria-hidden />
 
           {steps.map((s, i) => {
             const tone =
