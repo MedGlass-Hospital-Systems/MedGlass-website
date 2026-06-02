@@ -10,6 +10,7 @@ import { TopNav } from './components/layout/TopNav'
 import { Footer } from './components/layout/Footer'
 import { AmbientBackground } from './components/layout/AmbientBackground'
 import LegalNoticesPage from './pages/LegalPage'
+import FramePage from './pages/FramePage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -33,6 +34,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/legal" element={<LegalNoticesPage />} />
+          <Route path='/frame' element={<FramePage/>}/>
 
         </Routes>
       </main>
