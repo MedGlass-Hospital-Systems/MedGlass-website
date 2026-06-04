@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate, BrowserRouter } from 'react-router-dom'
 import { useEffect } from 'react'
 
 import HomePage from './pages/HomePage'
@@ -23,6 +23,8 @@ function ScrollToTop() {
 function App() {
   return (
     <>
+      <BrowserRouter>
+
       <AmbientBackground />
       <ScrollToTop />
       <TopNav />
@@ -35,10 +37,13 @@ function App() {
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/legal" element={<LegalNoticesPage />} />
           <Route path='/frame' element={<FramePage/>}/>
+          <Route path="*" element={<Navigate to="/" replace />} />
 
         </Routes>
       </main>
       <Footer />
+      </BrowserRouter>
+
     </>
   )
 }
