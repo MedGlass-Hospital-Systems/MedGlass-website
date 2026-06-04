@@ -8,5 +8,8 @@ export default defineConfig({
     react(),
     tailwindcss(), 
   ],
-  base : '/MedGlass-website/',
+  base : '/',
+  build: {
+    outDir: 'dist',
+  },
 })

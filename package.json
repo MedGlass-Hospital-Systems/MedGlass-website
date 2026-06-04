@@ -2,17 +2,16 @@
   "name": "medglass-front",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://medglass.fr",
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "predev": "npx only-allow pnpm",
     "prebuild": "npx only-allow pnpm",
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "pnpm build",
-    "deploy": "gh-pages -d dist"
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist --no-history --dotfiles --remote origin"
   },
   "dependencies": {
     "clsx": "^2.1.1",
