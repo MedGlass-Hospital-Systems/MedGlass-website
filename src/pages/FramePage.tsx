@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
@@ -11,33 +11,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TOTAL_FRAMES = 377;
 
-// Enhanced fadeUp for a more cinematic "cool" reveal over the video
-const fadeUp = {
-  hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
-  visible: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { 
-      duration: 0.8, 
-      delay: i * 0.1, 
-      ease: [0.22, 1, 0.36, 1] as const 
-    },
-  }),
-};
-
 // Data arrays from your HomePage
 const steps = [
   { n: "01", i: "upload_file", t: "Importez votre service", d: "Équipes, contrats, règles de service, compétences. Nous reprenons vos données existantes (Excel, anciens outils) en 1 session.", tone: "primary" as const },
   { n: "02", i: "auto_fix", t: "L'IA propose un planning", d: "L'assistant génère un planning conforme à vos règles, respectant repos, compétences et préférences. Vous gardez la main sur chaque décision.", tone: "tertiary" as const },
   { n: "03", i: "phone_iphone", t: "Diffusez aux équipes", d: "Vos soignants consultent leur planning sur mobile, demandent leurs congés et échangent leurs gardes. Vous suivez tout depuis la console.", tone: "secondary" as const },
-];
-
-const principles = [
-  { i: "groups", t: "Co-conçu avec des soignants", d: "Praticiens, cadres, IDE et DRH participent à chaque décision produit. Pas de design « pour les hôpitaux » sans les hôpitaux." },
-  { i: "rule", t: "Conformité par défaut", d: "Code du travail, conventions collectives, repos compensateurs : les règles métier sont natives, pas un module en option." },
-  { i: "lock", t: "Souveraineté française", d: "Hébergement HDS en France, données chiffrées de bout en bout, aucune dépendance à des services hors UE." },
-  { i: "support_agent", t: "Accompagnement humain", d: "Migration, formation, paramétrage : une équipe dédiée vous accompagne. Pas seulement un logiciel, un partenaire." },
 ];
 
 const features = [
@@ -47,17 +25,9 @@ const features = [
   { i: "warning", t: "Détection des conflits", d: "Repos non respectés, gardes consécutives, sous-effectif : l'application alerte avant publication.", span: "md:col-span-2", tone: "primary" as const },
 ];
 
-const personas = [
-  { i: "medical_services", t: "Praticiens", d: "Gardes, astreintes, plages opératoires." },
-  { i: "school", t: "Internes", d: "Maquettes, semestres, gardes obligatoires." },
-  { i: "vaccines", t: "IDE & cadres", d: "Roulements, transmissions, encadrement." },
-  { i: "support_agent", t: "DRH & directions", d: "Pilotage, conformité, prévisionnel." },
-];
-
 const compliance = [
   "Hébergement HDS certifié",
   "Conformité RGPD documentée",
-  "Authentification forte (MFA, SSO Pro Santé)",
   "Journalisation et traçabilité complète",
   "Sauvegardes chiffrées quotidiennes",
 ];
@@ -174,13 +144,13 @@ const fadeFromRight = {
       </div>
 
       {/* FOREGROUND: Scrolling Content */}
-      <div className="relative z-10 w-full pb-32">
+      <div className="relative z-10 w-full">
         
         {/* HERO */}
-        <section className="relative min-h-screen flex items-center max-w-7xl mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-20">
+        <section className="relative flex items-center max-w-7xl mx-auto px-4 md:px-8 pb-20">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center w-full">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeFromLeft} className="space-y-7">
-              <h1 className="text-[44px] sm:text-[56px] lg:text-[64px] leading-[1.05] font-extrabold tracking-tight text-white">
+              <h1 className="text-[40px] sm:text-[56px] lg:text-[64px] leading-[1.05] font-extrabold tracking-tight text-white">
                 La planification médicale,{" "}
                 <span className="text-gradient">enfin sereine.</span>
               </h1>
@@ -197,11 +167,9 @@ const fadeFromRight = {
               </div>
               <div className="flex flex-wrap gap-5 pt-2 text-[13px] text-white/60">
                 <span className="flex items-center gap-2">
-                  <Icon name="check_circle" className="text-success text-[18px]" filled />
                   Hébergement certifié HDS
                 </span>
                 <span className="flex items-center gap-2">
-                  <Icon name="check_circle" className="text-success text-[18px]" filled />
                   Conforme RGPD
                 </span>
               </div>
@@ -309,17 +277,13 @@ const fadeFromRight = {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeFromLeft}>
             <GlassPanel variant="elevated" className="p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center bg-black/50 backdrop-blur-xl border-white/10">
               <div className="relative z-10 space-y-5">
-                <Badge tone="success">
-                  <Icon name="verified" className="text-[14px]" filled />
-                  Sécurité & conformité
-                </Badge>
+                
                 <h2 className="text-[32px] md:text-[40px] font-bold tracking-tight text-white">
-                  Vos données patients ne quittent jamais la France
+                  Vos données ne quittent jamais la France
                 </h2>
                 <ul className="space-y-3">
                   {compliance.map((p) => (
                     <li key={p} className="flex items-start gap-3 text-[15px] text-white/80">
-                      <Icon name="check_circle" className="text-success text-[20px] mt-0.5" filled />
                       <span>{p}</span>
                     </li>
                   ))}
@@ -333,10 +297,10 @@ const fadeFromRight = {
                   { label: "ISO 27001", sub: "Sécurité", icon: "lock" },
                   { label: "ANSSI", sub: "Recommandations", icon: "verified_user" },
                 ].map((c) => (
-                  <div key={c.label} className="bg-white/5 border border-white/10 rounded-2xl aspect-square flex flex-col items-center justify-center text-center p-4 hover:bg-white/10 transition-colors group">
-                    <Icon name={c.icon} className="text-primary text-[28px] mb-2 group-hover:scale-110 transition-transform" filled />
-                    <div className="font-bold text-white text-[18px]">{c.label}</div>
-                    <div className="text-[10px] uppercase tracking-wider text-white/50 mt-1">{c.sub}</div>
+                  <div key={c.label} className="bg-black/35 border border-white/10 rounded-2xl aspect-square flex flex-col items-center justify-center text-center p-4 hover:bg-white/10 transition-colors group">
+                    <Icon name={c.icon} className="text-primary scale-150 mb-4 group-hover:scale-200 transition-transform" filled />
+                    <div className="font-bold text-white text-[20px]">{c.label}</div>
+                    <div className="text-[15px] uppercase tracking-wider text-white/50 mt-1">{c.sub}</div>
                   </div>
                 ))}
               </div>
@@ -345,7 +309,7 @@ const fadeFromRight = {
         </section>
 
         {/* CTA */}
-        <section className="relative min-h-[50vh] flex flex-col justify-center max-w-4xl mx-auto px-4 md:px-8 py-[10vh] text-center">
+        <section className="mb-16 relative min-h-[50vh] flex flex-col justify-center max-w-4xl mx-auto px-4 md:px-8 py-[10vh] text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeFromRight}>
             <h2 className="text-[36px] md:text-[52px] font-extrabold tracking-tight mb-4 leading-tight text-white">
               Prêt à libérer <span className="text-gradient">du temps soignant</span> ?

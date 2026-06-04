@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "homepage": "https://medglass.fr",
-
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -15,13 +14,15 @@
     "deploy": "gh-pages -d dist --no-history --dotfiles --remote origin"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "clsx": "^2.1.1",
     "cn": "link:@/lib/utils/cn",
     "framer-motion": "^12.38.0",
     "gsap": "^3.15.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-router-dom": "^7.15.0"
+    "react-router-dom": "^7.15.0",
+    "resend": "^6.12.4"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
