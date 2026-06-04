@@ -32,7 +32,7 @@ export function TopNav() {
         scrolled ? "glass-nav shadow-[0_8px_32px_rgba(0,0,0,0.25)]" : "bg-transparent border-b border-transparent",
       )}
     >
-      <div className="px-5 md:px-10 h-22 flex items-center justify-between">
+      <div className="px-5 md:px-10 h-18 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
           <span className="relative w-15 h-15 rounded-xl flex items-center justify-center overflow-hidden">
             <img src="/logo.png"></img>
