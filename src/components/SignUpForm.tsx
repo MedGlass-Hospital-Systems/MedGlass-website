@@ -2,40 +2,21 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Icon } from "../components/layout/Icon";
 
-export default function LoginPage() {
-  return (
-            <section className="min-h-screen flex items-center justify-center p-4">
+interface signingProps{
+    setSign();
+}
+
+export default function SignUpForm( {setSign} ):signingProps{
+    
+    return(
+        <section className="min-h-screen flex items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 30, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="w-full max-w-350 md:min-h-250 flex flex-col md:flex-row rounded-3xl overflow-hidden glass-card-elevated shadow-2xl relative mx-auto"
       >
-        {/* LEFT SECTION - Scenic Illustration */}
-        <div className="hidden md:flex relative w-[40%] flex-col bg-[#1A1A2E] overflow-hidden">
-          {/* SVG Wavy S-Curve Separator */}
-          <svg
-            viewBox="0 0 100 800"
-            preserveAspectRatio="none"
-            className="absolute top-0 bottom-0 -right-px w-15 h-full text-surface-container z-20 pointer-events-none"
-          >
-            <path
-              fill="currentColor"
-              d="M100,0 C-20,200 120,600 100,800 L100,800 L100,0 Z"
-            />
-          </svg>
 
-          {/* Abstract Scenic Background - Object cover with ideal aspect ratio */}
-          <img 
-            className="absolute inset-0 w-full h-full object-cover object-center z-0" 
-            src="/loginbg.png" 
-            alt="Scenic mountain planning"
-          />
-
-          {/* Content overlay if needed */}
-          <div className="relative z-10 flex flex-col items-center">
-          </div>
-        </div>
 
         {/* RIGHT SECTION - Form Container */}
         <div className="w-full md:w-[60%] bg-surface-container p-8 md:p-12 lg:p-16 flex flex-col justify-center items-center relative z-10">
@@ -149,7 +130,9 @@ export default function LoginPage() {
                   S'inscrire
                 </button>
                 <span className="group-hover:text-on-surface transition-colors mt-4 text-center">
-                  Vous avez déjà un compte ? Connectez vous
+                  Vous avez déjà un compte ? 
+                <button onClick={setSign(true)}>Connectez vous</button>
+
                 </span>
               </div>
             </form>
@@ -157,5 +140,5 @@ export default function LoginPage() {
         </div>
       </motion.div>
     </section>
-  );
+    )
 }

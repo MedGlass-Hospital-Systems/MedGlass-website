@@ -38,7 +38,7 @@ export function Footer() {
                 <img src="/logo.png" alt="" />       
              </span>
               <span className="font-bold text-[18px] tracking-tight text-on-surface">
-                Med<span className="text-primary">Glass</span>
+                Nexi<span className="text-primary">Via</span>
               </span>
             </Link>
             <p className="text-body-sm text-on-surface-variant max-w-sm leading-relaxed">
@@ -108,7 +108,7 @@ export function Footer() {
         </div>
 
         <div className="pt-6 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-on-surface-variant">
-          <p>© {new Date().getFullYear()} MedGlass Hospital Systems · Conçu en France</p>
+          <p>© {new Date().getFullYear()} NexiVia Hospital Systems · Conçu en France</p>
         </div>
       </div>
     </footer>

@@ -103,7 +103,7 @@ export default function ContactPage() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-3"
           >
-            <GlassPanel variant="elevated" className="p-8 md:p-10 relative overflow-hidden">
+              <GlassPanel variant="elevated" className="p-8 md:p-10 relative overflow-hidden transform-gpu [-webkit-mask-image:linear-gradient(white,white)]">
               <div className="absolute -top-20 -right-20 w-56 h-56 rounded-full bg-primary/15 blur-3xl" />
               <div className="relative z-10">
                 <h2 className="text-[26px] font-bold mb-2">Envoyez-nous un message</h2>

@@ -28,17 +28,17 @@ export function TopNav() {
   return (
     <header
       className={cn(
-        "p-4 fixed top-0 left-0 h-16 right-0 z-50 transition-all duration-300",
-        scrolled ? "glass-nav shadow-[0_8px_36px_rgba(0,0,0,0.25)]" : "bg-transparent border-b border-transparent",
+        "p-4 fixed top-0 left-0 h-24 right-0 z-50 transition-all duration-300",
+        scrolled ? "glass-nav shadow-[0_2px_12px_rgba(0,0,0.25,0.45)]" : "bg-transparent border-b border-transparent",
       )}
     >
       <div className="flex h-full justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <span className="relative w-13 h-13 rounded-xl flex items-center justify-center overflow-hidden">
+          <span className="relative w-20 h-20 rounded-xl flex items-center justify-center overflow-hidden">
             <img src="/logo.png"></img>
           </span>
-          <span className="font-bold text-[30px] tracking-tight text-on-surface">
-            Med<span className="text-primary">Glass</span>
+          <span className="font-bold text-[35px] tracking-tight text-on-surface">
+            Nexi<span className="text-primary">Via</span>
           </span>
         </Link>
 

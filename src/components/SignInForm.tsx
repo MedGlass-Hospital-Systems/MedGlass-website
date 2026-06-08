@@ -1,41 +1,17 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Icon } from "../components/layout/Icon";
 
-export default function LoginPage() {
-  return (
-            <section className="min-h-screen flex items-center justify-center p-4">
+export default function SignInForm(setSign){
+    
+    return(
+        <section className="min-h-screen flex items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 30, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="w-full max-w-350 md:min-h-250 flex flex-col md:flex-row rounded-3xl overflow-hidden glass-card-elevated shadow-2xl relative mx-auto"
       >
-        {/* LEFT SECTION - Scenic Illustration */}
-        <div className="hidden md:flex relative w-[40%] flex-col bg-[#1A1A2E] overflow-hidden">
-          {/* SVG Wavy S-Curve Separator */}
-          <svg
-            viewBox="0 0 100 800"
-            preserveAspectRatio="none"
-            className="absolute top-0 bottom-0 -right-px w-15 h-full text-surface-container z-20 pointer-events-none"
-          >
-            <path
-              fill="currentColor"
-              d="M100,0 C-20,200 120,600 100,800 L100,800 L100,0 Z"
-            />
-          </svg>
 
-          {/* Abstract Scenic Background - Object cover with ideal aspect ratio */}
-          <img 
-            className="absolute inset-0 w-full h-full object-cover object-center z-0" 
-            src="/loginbg.png" 
-            alt="Scenic mountain planning"
-          />
-
-          {/* Content overlay if needed */}
-          <div className="relative z-10 flex flex-col items-center">
-          </div>
-        </div>
 
         {/* RIGHT SECTION - Form Container */}
         <div className="w-full md:w-[60%] bg-surface-container p-8 md:p-12 lg:p-16 flex flex-col justify-center items-center relative z-10">
@@ -112,44 +88,19 @@ export default function LoginPage() {
                     className="w-full bg-transparent border border-outline-variant/50 rounded-full px-5 py-2.5 text-[14px] text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary/60 focus-ring transition-all"
                   />
                 </div>
-
-                <div className="space-y-1.5 col-span-1 md:col-span-2">
-                  <label className="text-[13px] text-on-surface-variant ml-2">
-                    Répéter mot de passe
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="••••••••"
-                    className="w-full bg-transparent border border-outline-variant/50 rounded-full px-5 py-2.5 text-[14px] text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary/60 focus-ring transition-all"
-                  />
-                </div>
-              </div>
-
-              <label className="flex items-center gap-3 text-[12px] text-on-surface-variant mt-3 cursor-pointer group">
-                <div className="relative flex items-center justify-center w-4.5 h-4.5">
-                  <input
-                    type="checkbox"
-                    className="peer appearance-none w-full h-full rounded-full border border-outline-variant/60 bg-transparent checked:bg-primary/20 checked:border-primary focus-ring transition-all cursor-pointer"
-                  />
-                  <Icon
-                    name="check"
-                    className="absolute text-[12px] text-primary opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none"
-                  />
-                </div>
-                <span className="group-hover:text-on-surface transition-colors">
-                  J'accepte les <Link to="/terms" className="text-primary hover:underline">CGU</Link> et la Politique de Confidentialité
-                </span>
-              </label>
-
+            </div>
+                
+              
               <div className="pt-4 flex flex-col justify-start">
                 <button
                   type="submit"
                   className="w-full bg-primary-container/20 text-primary border border-primary/30 hover:bg-primary/20 hover:border-primary/50 px-12 py-3.5 rounded-full text-[14px] font-semibold transition-all focus-ring glow-primary"
                 >
-                  S'inscrire
+                  Se Connecter
                 </button>
                 <span className="group-hover:text-on-surface transition-colors mt-4 text-center">
-                  Vous avez déjà un compte ? Connectez vous
+                  Vous n'avez pas de compte ? 
+                  <button onClick={setSign(true)}>Creez en un </button>
                 </span>
               </div>
             </form>
@@ -157,5 +108,5 @@ export default function LoginPage() {
         </div>
       </motion.div>
     </section>
-  );
+    )
 }
