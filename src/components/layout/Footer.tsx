@@ -15,8 +15,7 @@ const resourceLinks = [
 
 const legalLinks = [
   { to: "/legal", label: "Confidentialité" },
-  { to: "/legal/terms", label: "CGU" },
-  { to: "/legal/security", label: "Sécurité des données" },
+  { to: "/CGU", label: "CGU" },
 ];
 
 const certifications = [

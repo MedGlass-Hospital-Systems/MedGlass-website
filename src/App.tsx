@@ -11,6 +11,7 @@ import { Footer } from './components/layout/Footer'
 import { AmbientBackground } from './components/layout/AmbientBackground'
 import LegalNoticesPage from './pages/LegalPage'
 import FramePage from './pages/FramePage'
+import CGUPage from './pages/CGUPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -37,6 +38,7 @@ function App() {
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/legal" element={<LegalNoticesPage />} />
           <Route path='/frame' element={<FramePage/>}/>
+          <Route path='/CGU' element={<CGUPage/>}/>
           <Route path="*" element={<Navigate to="/" replace />} />
 
         </Routes>
