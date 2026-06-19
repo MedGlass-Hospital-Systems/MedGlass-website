@@ -9,7 +9,6 @@ import PricingPage from './pages/PricingPage'
 import { TopNav } from './components/layout/TopNav'
 import { Footer } from './components/layout/Footer'
 import LegalNoticesPage from './pages/LegalPage'
-import FramePage from './pages/FramePage'
 import CGUPage from './pages/CGUPage'
 import NexiViaPage from './pages/NexiViaPage'
 import AegisPlanPage from './pages/AegisPlanPage'
@@ -37,15 +36,15 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/legal" element={<LegalNoticesPage />} />
-          <Route path='/frame' element={<FramePage/>}/>
           <Route path='/CGU' element={<CGUPage/>}/>
           <Route path="*" element={<Navigate to="/" replace />} />
 
           <Route path="/solutions/nexivia" element={<NexiViaPage />} />
           <Route path="/solutions/aegisplan" element={<AegisPlanPage />} />
           <Route path="/solutions/demecare" element={<DemeCarePage />} />
-
         </Routes>
+                <Footer/>
+
       </BrowserRouter>
 
     </>

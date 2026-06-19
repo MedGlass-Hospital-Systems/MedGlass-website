@@ -4,7 +4,17 @@ import { Icon } from "../components/layout/Icon";
 
 export default function LoginPage() {
   return (
-            <section className="min-h-screen flex items-center justify-center p-4">
+    <section className="min-h-screen flex items-center justify-center p-4">
+
+      <div className="fixed inset-0 z-0 pointer-events-none bg-background">
+        {/* Image de fond fixe */}
+        <img 
+          src="/nightCity.png" 
+          alt="Fond spatial MedGlass" 
+          className="absolute  object-cover"
+        />
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 30, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}

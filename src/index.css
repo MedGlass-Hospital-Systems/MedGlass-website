@@ -1,99 +1,82 @@
 @import "tailwindcss";
 
 @theme {
-  /* Color tokens — Palette "Bio-Computer Neon Dark" basée sur la capture d'écran */
+  /* Color tokens — Palette basée sur la capture d'écran Miro */
 
   /* =========================================
-     FONDS ET SURFACES (Les tons violets profonds)
+     FONDS ET SURFACES (Les tons bleus nuits profonds)
      ========================================= */
-  /* Le coin le plus sombre du fond global */
-  --color-background: #132768; 
-  /* La couleur principale de base de la page */
-  --color-surface: #140d26; 
-  /* Les zones d'ombres extrêmes ou bords d'écran */
-  --color-surface-container-lowest: #0a0612; 
-  /* Conteneurs subtils en arrière-plan */
-  --color-surface-container-low: #140d26; 
-  /* Fond violet moyen (autour du texte central) */
-  --color-surface-container: #1a1333; 
-  /* Lignes de grille ou cartes claires superposées */
-  --color-surface-container-high: #241b45; 
-  /* Éléments de surface les plus mis en avant */
-  --color-surface-container-highest: #2e2358; 
-  /* Highlights / reflets sur les surfaces */
-  --color-surface-bright: #372b68; 
-  /* Variantes de fond de cartes / modales */
-  --color-surface-variant: #2e2358; 
+  /* Le bleu nuit principal de base de la page (#050C3A) */
+  --color-background: #050c3a; 
+  /* La surface de base */
+  --color-surface: #060e46; 
+  /* Déclinaisons pour la profondeur des cartes et conteneurs */
+  --color-surface-container-lowest: #03061c; 
+  --color-surface-container-low: #050c3a; 
+  --color-surface-container: #060e46; 
+  --color-surface-container-high: #0d1654; 
+  --color-surface-container-highest: #141f66; 
+  --color-surface-bright: #1b287a; 
+  --color-surface-variant: #0d1654; 
 
   /* =========================================
-     TEXTES (Blanc éclatant et gris-violet)
+     TEXTES (Blanc éclatant et nuances de bleu-violet)
      ========================================= */
-  /* Texte principal éclatant (ex: "Creating a Biocomputer") */
+  /* Texte principal éclatant pour une lisibilité maximale */
   --color-on-surface: #ffffff; 
-  /* Texte secondaire / Surtitre (ex: "HACKING THE CELL", "01 / 05") */
-  --color-on-second: #5a189a;
-  --color-on-surface-variant: #a39bb7; 
-  /* Texte sur fond global (Généralement blanc) */
+  /* Texte secondaire utilisant la nuance indigo/lavande */
+  --color-on-second: #8c8ff0;
+  --color-on-surface-variant: #a4a7f5; 
+  /* Texte sur fond global */
   --color-on-background: #ffffff; 
 
   /* =========================================
-     BOUTONS & ACTIONS (Le rose/rouge framboise)
+     BOUTONS & ACTIONS (Le Vert Éclatant #76D097)
      ========================================= */
-  /* Le bouton "LEARN MORE" et le cercle interactif à gauche */
-  --color-primary: #d62851; 
-  /* Variante foncée du bouton (pour le survol ou les ombres) */
-  --color-primary-container: #8a1532; 
-  /* Le texte à l'intérieur du bouton "LEARN MORE" */
-  --color-on-primary: #ffffff; 
-  /* Variante texte sur les fonds conteneurs clairs */
-  --color-on-primary-container: #ffb4c5; 
-  /* Rose plus clair pour un contraste inverse si besoin */
-  --color-inverse-primary: #ff89a3; 
+  /* Action principale : le vert émeraude clair de votre palette */
+  --color-primary: #76d097; 
+  /* Variante foncée pour les états de survol (hover) */
+  --color-primary-container: #4ea16f; 
+  /* Texte sur le bouton principal (foncé pour le contraste sur le vert) */
+  --color-on-primary: #050c3a; 
+  --color-on-primary-container: #ffffff; 
+  --color-inverse-primary: #a1e2b8; 
 
   /* =========================================
-     ACCENT 1 (Le violet au centre de la forme 3D)
+     ACCENT 1 (Le Bleu-Violet Indigo #8C8FF0)
      ========================================= */
-  /* Violet vibrant au cœur de la "fleur" 3D */
-  --color-secondary: #9d4edd; 
-  /* Ombre ou fond profond de cet accent violet */
-  --color-secondary-container: #5a189a; 
-  /* Texte affiché sur l'accent violet */
-  --color-on-secondary: #ffffff; 
-  /* Texte affiché sur le conteneur secondaire */
-  --color-on-secondary-container: #e0b3ff; 
+  /* Idéal pour les sous-titres, les bordures d'activation ou badges */
+  --color-secondary: #8c8ff0; 
+  --color-secondary-container: #5c60c7; 
+  --color-on-secondary: #050c3a; 
+  --color-on-secondary-container: #ffffff; 
 
   /* =========================================
-     ACCENT 2 (Le bleu fluide en bas de la forme 3D)
+     ACCENT 2 (Le Bleu Sombre Équilibré #060E46)
      ========================================= */
-  /* Bleu électrique / néon visible au bas du visuel central */
-  --color-tertiary: #3b82f6; 
-  /* Version sombre du bleu pour les ombres portées */
-  --color-tertiary-container: #1d4ed8; 
-  /* Texte sur l'accent bleu */
+  --color-tertiary: #060e46; 
+  --color-tertiary-container: #0d1654; 
   --color-on-tertiary: #ffffff; 
-  /* Texte sur le conteneur tertiaire */
-  --color-on-tertiary-container: #bfdbfe; 
+  --color-on-tertiary-container: #8c8ff0; 
 
   /* =========================================
-     ÉTATS (Adaptés à la teinte globale)
+     ÉTATS
      ========================================= */
-  /* Gardés classiques mais légèrement saturés pour coller au néon */
   --color-error: #ff5449;
   --color-error-container: #93000a;
   --color-on-error: #690005;
   --color-on-error-container: #ffdad6;
-  --color-success: #6dd58c;
+  /* Utilisation naturelle du vert de la palette pour le succès */
+  --color-success: #76d097;
   --color-warning: #ffcd6a;
 
   /* =========================================
-     BORDURES & LIGNES (La grille de fond)
+     BORDURES & LIGNES
      ========================================= */
-  /* Lignes de grille bien visibles en arrière-plan */
-  --color-outline: #403564; 
-  /* Lignes de grille très subtiles ou bordures invisibles */
-  --color-outline-variant: #2c2445; 
+  /* Lignes basées sur l'indigo translucide ou bleu nuit éclairé */
+  --color-outline: #252e6d; 
+  --color-outline-variant: #141f66; 
 
-  /* Typography (Conservée à l'identique de votre base) */
+  /* Typography */
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 }
-
