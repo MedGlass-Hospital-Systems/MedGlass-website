@@ -1,6 +1,3 @@
-/* ============================================================
-   SOUS-COMPOSANT CHAMP DE FORMULAIRE (FIELD)
-   ============================================================ */
 interface FieldProps {
   label: string;
   placeholder: string;

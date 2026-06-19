@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { GlassPanel } from "../components/ui/GlassPanel";
 import { Button } from "../components/ui/Button";
 import { Icon } from "../components/layout/Icon";
-import Field from "../components/ui/field";
+import Field from "../components/ui/Field";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
