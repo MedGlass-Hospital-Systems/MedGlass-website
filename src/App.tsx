@@ -8,10 +8,12 @@ import LoginPage from './pages/LoginPage'
 import PricingPage from './pages/PricingPage'
 import { TopNav } from './components/layout/TopNav'
 import { Footer } from './components/layout/Footer'
-import { AmbientBackground } from './components/layout/AmbientBackground'
 import LegalNoticesPage from './pages/LegalPage'
 import FramePage from './pages/FramePage'
 import CGUPage from './pages/CGUPage'
+import NexiViaPage from './pages/NexiViaPage'
+import AegisPlanPage from './pages/AegisPlanPage'
+import DemeCarePage from './pages/DemeCarePage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -26,12 +28,10 @@ function App() {
     <>
       <BrowserRouter>
 
-      <AmbientBackground />
       <ScrollToTop />
       <TopNav />
-      <main className="relative pt-16">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage/>} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -41,9 +41,11 @@ function App() {
           <Route path='/CGU' element={<CGUPage/>}/>
           <Route path="*" element={<Navigate to="/" replace />} />
 
+          <Route path="/solutions/nexivia" element={<NexiViaPage />} />
+          <Route path="/solutions/aegisplan" element={<AegisPlanPage />} />
+          <Route path="/solutions/demecare" element={<DemeCarePage />} />
+
         </Routes>
-      </main>
-      <Footer />
       </BrowserRouter>
 
     </>

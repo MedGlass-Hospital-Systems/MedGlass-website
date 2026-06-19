@@ -26,8 +26,8 @@ const certifications = [
 
 export function Footer() {
   return (
-    <footer className="relative mt-20 pt-16 pb-8 px-4 md:px-8">
-      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-outline-variant/40 to-transparent" />
+    <footer className="relative mt-20 pt-16 px-4 md:px-8">
+      <div className=" inset-x-0 top-0 h-px bg-background" />
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">

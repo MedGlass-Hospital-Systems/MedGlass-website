@@ -4,7 +4,6 @@ import { Icon } from "./Icon";
 import { cn } from "../../lib/utils/cn";
 
 const links = [
-  { to: "/features", label: "Fonctionnalités" },
   { to: "/pricing", label: "Tarifs" },
   { to: "/contact", label: "Contact" },
 ];
@@ -15,7 +14,8 @@ export function TopNav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    // Déclenchement plus tardif pour bien voir la transition du glass
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -27,22 +27,72 @@ export function TopNav() {
 
   return (
     <header
+
+      
       className={cn(
-        "p-4 fixed top-0 left-0 h-24 right-0 z-50 transition-all duration-300",
-        scrolled ? "glass-nav shadow-[0_2px_12px_rgba(0,0,0.25,0.45)]" : "bg-transparent border-b border-transparent",
+        // Positionnement flottant type "Pill"
+        "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-6xl",
+        "p-3 md:px-5 md:py-3 transition-all duration-300 rounded-3xl",
+        // Effet Liquid Glass principal
+        "bg-surface/20 backdrop-blur-xl border-3 border-surface/10",
+        "shadow-[0_8px_32px_0_rgba(36,27,69,0.3)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]",
+        // État au scroll (plus dense)
+        scrolled && "bg-surface/10 border-surface/5 shadow-[0_8px_32px_0_rgba(20,13,38,0.6)] backdrop-blur-2xl"
       )}
     >
-      <div className="flex h-full justify-between">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <span className="relative w-20 h-20 rounded-xl flex items-center justify-center overflow-hidden">
-            <img src="/logo.png"></img>
+      <div className="flex h-full items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-3 group">
+          <span className="relative w-12 h-12 rounded-2xl flex items-center justify-center overflow-hidden bg-white/5 border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)] backdrop-blur-md transition-transform group-hover:scale-105">
+            <img src="/logo.png" alt="NexiVia Logo" className="w-8 h-8 object-contain" />
           </span>
-          <span className="font-bold text-[35px] tracking-tight text-on-surface">
-            Nexi<span className="text-primary">Via</span>
-          </span>
+          <div className="flex items-center font-bold text-2xl tracking-tight">
+            <span className="text-secondary drop-shadow-[0_0_8px_rgba(157,78,221,0.5)]">Med</span>
+            <span className="text-amber-50">Glass</span>
+          </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
+{/* Navigation Bureau encapsulée dans une pilule en verre */}
+        <nav className="hidden md:flex items-center gap-1 p-1.5 rounded-full ">
+          
+          {/* Dropdown Solutions */}
+          <div className="relative group">
+            <button className="flex items-center gap-1.5 px-5 py-2 rounded-full text-[17px] font-medium text-on-surface-variant hover:text-on-second hover:bg-white/10 hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition-all duration-300">
+              Solutions 
+              <svg 
+                className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" 
+                aria-hidden="true" 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24"
+              >
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7"/>
+              </svg>
+            </button>
+            
+            {/* Contenu du Dropdown (Liquid Glass) */}
+            <div className="absolute top-full left-0 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 w-48 z-50">
+              <ul className="p-2 flex flex-col gap-1 bg-surface-variant/20 backdrop-blur-xl border-2 border-surface-bright/3 rounded-2xl shadow-[0_8px_32px_0_rgba(20,13,38,0.6)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
+                <li>
+                  <Link to="/solutions/nexivia" className="flex items-center w-full px-4 py-2.5 rounded-xl text-[14px] font-medium text-on-secondary hover:text-on-second hover:bg-white/10 transition-colors">
+                    NexiVia
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/solutions/aegisplan" className="flex items-center w-full px-4 py-2.5 rounded-xl text-[14px] font-medium text-on-secondary hover:text-on-second hover:bg-white/10 transition-colors">
+                    AegisPlan
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/solutions/demecare" className="flex items-center w-full px-4 py-2.5 rounded-xl text-[14px] font-medium text-on-secondary hover:text-on-second hover:bg-white/10 transition-colors">
+                    DemeCare
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          {/* Reste des liens classiques */}
           {links.map((link) => {
             const active = pathname === link.to || pathname?.startsWith(link.to + "/");
             return (
@@ -50,54 +100,59 @@ export function TopNav() {
                 key={link.to}
                 to={link.to}
                 className={cn(
-                  "relative px-4 py-2 rounded-full text-[22px] transition-all duration-200",
+                  "relative px-5 py-2 rounded-full text-[17px] font-medium transition-all duration-300",
                   active
-                    ? "text-primary bg-primary/10"
-                    : "text-on-surface-variant hover:text-on-surface hover:bg-white/5",
+                    ? "text-on-primary bg-primary/90 shadow-[0_0_15px_rgba(214,40,81,0.3)] border border-white/20"
+                    : "text-on-surface-variant hover:text-on-second hover:bg-white/10 hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]",
                 )}
               >
                 {link.label}
-                {active && (
-                  <span className="absolute -bottom-px left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary glow-primary" />
-                )}
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        {/* Call To Actions */}
+        <div className="hidden md:flex items-center gap-4">
           <Link
             to="/login"
-            className="text-[14px] text-on-surface-variant hover:text-primary transition-colors px-3"
+            className="text-[17px] text-on-surface-variant hover:text-on-second hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-all px-2"
           >
             Connexion
           </Link>
           <a
             href="https://app.medglass.fr"
-            className="px-5 py-2.5 rounded-full bg-primary text-on-primary font-label-caps text-[11px] tracking-[0.08em] uppercase hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 shadow-[0_4px_14px_rgba(173,198,255,0.39)] hover:shadow-[0_6px_24px_rgba(173,198,255,0.5)] flex items-center gap-1.5"
+            className={cn(
+              "px-5 py-2.5 rounded-full font-label-caps text-[11px] tracking-[0.08em] uppercase flex items-center gap-1.5 transition-all duration-300",
+              // Dégradé néon liquide
+              "bg-gradient-to-r from-primary to-secondary text-white",
+              "border border-white/20 shadow-[0_4px_20px_rgba(214,40,81,0.4)]",
+              "hover:shadow-[0_6px_25px_rgba(157,78,221,0.6)] hover:scale-105"
+            )}
           >
             Démo gratuite
             <Icon name="arrow_forward" className="text-[16px]" />
           </a>
         </div>
 
+        {/* Bouton Menu Mobile (Glass Chip) */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden w-10 h-10 rounded-full glass-chip flex items-center justify-center text-on-surface"
+          className="md:hidden w-11 h-11 rounded-full flex items-center justify-center text-on-surface bg-white/5 border border-white/10 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] hover:bg-white/10 transition-colors"
           aria-label="Menu"
         >
           <Icon name={open ? "close" : "menu"} />
         </button>
       </div>
 
-      {/* Mobile drawer */}
+      {/* Tiroir Mobile "Liquid Glass" */}
       <div
         className={cn(
-          "md:hidden glass-nav overflow-hidden transition-[max-height,opacity] duration-300 ease-out",
-          open ? "max-h-100 opacity-100" : "max-h-0 opacity-0",
+          "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
+          open ? "max-h-[400px] opacity-100 mt-4" : "max-h-0 opacity-0 mt-0",
         )}
       >
-        <nav className="px-4 py-4 flex flex-col gap-1">
+        <nav className="p-3 flex flex-col gap-1.5 rounded-2xl bg-surface-container-highest/30 backdrop-blur-xl border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
           {links.map((link) => {
             const active = pathname === link.to;
             return (
@@ -105,24 +160,28 @@ export function TopNav() {
                 key={link.to}
                 to={link.to}
                 className={cn(
-                  "px-4 py-3 rounded-xl text-[15px]",
-                  active ? "bg-primary/10 text-primary" : "text-on-surface-variant hover:bg-white/5",
+                  "px-4 py-3.5 rounded-xl text-[15px] font-medium transition-all duration-200",
+                  active 
+                    ? "bg-primary/20 text-primary border border-primary/30" 
+                    : "text-on-surface-variant hover:text-on-surface hover:bg-white/5 border border-transparent",
                 )}
               >
                 {link.label}
               </Link>
             );
           })}
-          <div className="mt-2 pt-3 border-t border-outline-variant/30 flex flex-col gap-2">
+          
+          {/* Séparateur vitré */}
+          <div className="mt-2 pt-3 border-t border-white/10 flex flex-col gap-2">
             <Link
               to="/login"
-              className="px-4 py-3 rounded-xl text-[15px] text-on-surface-variant hover:bg-white/5"
+              className="px-4 py-3 rounded-xl text-[15px] font-medium text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors"
             >
               Connexion
             </Link>
             <a
               href="https://app.medglass.fr"
-              className="mx-4 mt-1 mb-2 px-4 py-3 rounded-full bg-primary text-on-primary text-[12px] font-label-caps tracking-[0.08em] uppercase text-center shadow-[0_4px_14px_rgba(173,198,255,0.39)]"
+              className="mt-1 mb-1 px-4 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white text-[12px] font-label-caps tracking-[0.08em] uppercase text-center shadow-[0_4px_15px_rgba(214,40,81,0.4)] border border-white/20"
             >
               Démo gratuite
             </a>
