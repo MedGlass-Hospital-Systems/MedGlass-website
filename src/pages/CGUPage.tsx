@@ -7,7 +7,7 @@ export default function CGUPage() {
       <div className="fixed inset-0 z-0 pointer-events-none bg-background">
         {/* Image de fond fixe */}
         <img 
-          src="/mountain.png" 
+          src="/mountain.webp" 
           alt="Fond spatial MedGlass" 
           className="absolute  object-cover"
         />

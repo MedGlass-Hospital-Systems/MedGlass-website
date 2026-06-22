@@ -42,7 +42,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-2 space-y-6">
             <Link to="/" className="flex items-center gap-3 group w-fit">
               <span className="relative w-12 h-12 rounded-2xl flex items-center justify-center overflow-hidden bg-surface-container/60 border border-outline/50 shadow-inner backdrop-blur-md transition-transform group-hover:scale-105">
-                <img src="/logo.png" alt="MedGlass Logo" className="w-8 h-8 object-contain" />
+                <img src="/logo.webp" alt="MedGlass Logo" className="w-8 h-8 object-contain" />
               </span>
               <span className="font-bold text-[22px] tracking-tight flex items-center">
                 <span className="text-secondary drop-shadow-[0_0_8px_rgba(140,143,240,0.5)]">Med</span>

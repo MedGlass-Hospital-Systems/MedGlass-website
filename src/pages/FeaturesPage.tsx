@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { GlassPanel } from "../components/ui/GlassPanel";
 import { Badge } from "../components/ui/Badge";
-import { Button } from "../components/ui/Button";
 import { Icon } from "../components/layout/Icon";
 import { features } from "../data/featuresData";
 

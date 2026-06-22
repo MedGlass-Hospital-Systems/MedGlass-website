@@ -42,7 +42,7 @@ export function TopNav() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
           <span className="relative w-12 h-12 rounded-2xl flex items-center justify-center overflow-hidden bg-white/5 border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)] backdrop-blur-md transition-transform group-hover:scale-105">
-            <img src="/logo.png" alt="MedGlass Logo" className="w-8 h-8 object-contain" />
+            <img src="/logo.webp" alt="MedGlass Logo" className="w-8 h-8 object-contain" />
           </span>
           <div className="flex items-center font-bold text-2xl tracking-tight">
             {/* Utilisation de secondary (Indigo) pour l'accentuation */}

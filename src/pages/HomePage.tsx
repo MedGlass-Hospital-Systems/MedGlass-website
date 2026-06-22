@@ -23,7 +23,7 @@ export default function HomePage() {
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
       const img = new Image();
       const frameNumber = String(i).padStart(1, "0");
-      img.src = `/homeFrames/home${frameNumber}.png`;
+      img.src = `/homeFrames/home${frameNumber}.webp`;
       loadedImages.push(img);
     }
     setImages(loadedImages);
@@ -115,7 +115,7 @@ export default function HomePage() {
           
           <div className="flex-1 flex justify-center">
             <img 
-              src="/logos.png" 
+              src="/logos.webp" 
               alt="Logos des différentes solutions" 
               className='brightness-110 max-w-xl md:max-w-2xl lg:max-w-4xl h-auto object-contain drop-shadow-2xl'
             />

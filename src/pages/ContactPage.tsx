@@ -73,7 +73,7 @@ ${formData.message}
       <div className="fixed inset-0 z-0 pointer-events-none bg-background">
         {/* L'image de fond (Plan fixe) */}
         <img 
-          src="/night.jpg" // Assure-toi que le chemin est correct
+          src="/night.webp" // Assure-toi que le chemin est correct
           alt="Fond spatial MedGlass" 
           className="object-cover"
         />

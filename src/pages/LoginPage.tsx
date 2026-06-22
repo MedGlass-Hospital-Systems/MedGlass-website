@@ -9,7 +9,7 @@ export default function LoginPage() {
       <div className="fixed inset-0 z-0 pointer-events-none bg-background">
         {/* Image de fond fixe */}
         <img 
-          src="/nightCity.png" 
+          src="/nightCity.webp" 
           alt="Fond spatial MedGlass" 
           className="absolute  object-cover"
         />
