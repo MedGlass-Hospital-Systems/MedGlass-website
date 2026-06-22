@@ -154,6 +154,43 @@ export function TopNav() {
         )}
       >
         <nav className="p-3 flex flex-col gap-1.5 rounded-2xl bg-surface-container-high/60 backdrop-blur-xl border border-outline/50 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
+
+          <div className="relative group">
+            <button className="flex px-4 py-3.5 rounded-xl text-[15px] font-medium transition-all duration-200 text-on-surface-variant hover:text-on-surface hover:bg-white/5 border border-transparent">
+              Solutions 
+              <svg 
+                className="mt-auto mb-auto mx-5 w-4 h-4 transition-transform duration-300 group-hover:rotate-180" 
+                aria-hidden="true" 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24"
+              >
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7"/>
+              </svg>
+            </button>
+            
+            {/* Contenu du Dropdown (Liquid Glass) */}
+            <div className="absolute top-full left-0 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 w-48 z-50">
+              <ul className="p-2 flex flex-col gap-1 bg-surface-container/60 backdrop-blur-xl border border-outline rounded-2xl shadow-[0_8px_32px_0_rgba(3,6,28,0.8)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
+                <li>
+                  <Link to="/solutions/nexivia" className="flex items-center w-full px-4 py-2.5 rounded-xl text-[14px] font-medium text-on-surface hover:text-secondary hover:bg-white/10 transition-colors">
+                    NexiVia
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/solutions/aegisplan" className="flex items-center w-full px-4 py-2.5 rounded-xl text-[14px] font-medium text-on-surface hover:text-secondary hover:bg-white/10 transition-colors">
+                    AegisPlan
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/solutions/demecare" className="flex items-center w-full px-4 py-2.5 rounded-xl text-[14px] font-medium text-on-surface hover:text-secondary hover:bg-white/10 transition-colors">
+                    DemeCare
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           {links.map((link) => {
             const active = pathname === link.to;
             return (

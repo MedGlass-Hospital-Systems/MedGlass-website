@@ -79,7 +79,6 @@ export default function HomePage() {
   return (
     <div className="bg-background text-on-background min-h-screen">
       
-      {/* SECTION HERO */}
       <section className="min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col justify-center relative overflow-hidden">
         {/* Fond Mesh Gradient */}
         <div className='absolute inset-0 z-0 h-full w-full opacity-80'>

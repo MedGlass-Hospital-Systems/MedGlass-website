@@ -12,7 +12,7 @@ export default function LegalNoticesPage() {
         <img 
           src="/mountain.webp" 
           alt="Fond spatial MedGlass" 
-          className="absolute  object-cover"
+          className="absolute  object-cover h-full"
         />
       </div>
 
@@ -29,11 +29,7 @@ export default function LegalNoticesPage() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mb-12 space-y-5 text-center md:text-left"
         >
-          <div className="flex justify-center md:justify-start">
-            <Badge className="bg-secondary/10 text-secondary border border-secondary/20 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-medium">
-              Légal
-            </Badge>
-          </div>
+
           
           <h1 className="text-[44px] md:text-[60px] font-extrabold tracking-tight leading-[1.05] text-on-surface">
             Mentions{" "}
