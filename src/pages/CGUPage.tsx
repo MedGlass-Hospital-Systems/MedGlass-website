@@ -9,7 +9,7 @@ export default function CGUPage() {
         <img 
           src="/mountain.webp" 
           alt="Fond spatial MedGlass" 
-          className="absolute  object-cover h-full"
+          className="absolute  object-cover w-full h-full"
         />
       </div>
 
