@@ -32,7 +32,7 @@ export function TopNav() {
       <nav
         className={cn(
           // Centrage adaptatif : marges sur mobile via left/right, largeur max sur PC avec mx-auto
-          "absolute left-4 right-4 md:left-8 md:right-8 lg:left-auto lg:right-auto lg:w-full max-w-6xl mx-auto transition-all duration-300 rounded-3xl",
+          "absolute left-4 right-4 md:left-8 md:right-8 lg:w-full lg:mx-auto max-w-6xl mx-auto transition-all duration-300 rounded-3xl",
           // Centrage explicite pour l'écran large (lg)
           "lg:left-1/2 lg:-translate-x-1/2",
           // Position dynamique en hauteur
