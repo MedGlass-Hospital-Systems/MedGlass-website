@@ -26,8 +26,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <main className='bg-background'>
-
+      <main className='bg-background w-full overflow-x-hidden flex flex-col min-h-screen'>
       <ScrollToTop />
       <TopNav />
         <Routes>
