@@ -28,8 +28,7 @@ export function TopNav() {
   return (
     <header
       className={cn(
-        // Positionnement flottant type "Pill"
-        "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-6xl",
+        "fixed top-4 left-1/2 w-[calc(100%-2rem)] md:w-full -translate-x-1/2 z-50 max-w-xl md:max-w-6xl",
         "p-3 md:px-5 md:py-3 transition-all duration-300 rounded-3xl",
         // Effet Liquid Glass principal (adapté au fond bleu nuit)
         "bg-surface-container-low/30 backdrop-blur-md border border-outline/40",
