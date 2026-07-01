@@ -26,6 +26,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <main className='bg-background'>
 
       <ScrollToTop />
       <TopNav />
@@ -44,6 +45,7 @@ function App() {
           <Route path="/solutions/demecare" element={<DemeCarePage />} />
         </Routes>
                 <Footer/>
+      </main>
 
       </BrowserRouter>
 

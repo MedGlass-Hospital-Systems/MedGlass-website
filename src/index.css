@@ -80,3 +80,15 @@
   /* Typography */
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 }
+
+@layer base {
+  html, body {
+    /* Utilise la variable définie dans @theme pour peindre tout le fond du navigateur */
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    
+    /* Optionnel mais recommandé pour fluidifier le scroll sur mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
