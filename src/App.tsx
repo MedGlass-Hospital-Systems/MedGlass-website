@@ -1,6 +1,5 @@
 import { Routes, Route, useLocation, Navigate, BrowserRouter } from 'react-router-dom'
 import { useEffect } from 'react'
-
 import HomePage from './pages/HomePage'
 import ContactPage from './pages/ContactPage'
 import FeaturesPage from './pages/FeaturesPage'
@@ -13,6 +12,7 @@ import CGUPage from './pages/CGUPage'
 import NexiViaPage from './pages/NexiViaPage'
 import AegisPlanPage from './pages/AegisPlanPage'
 import DemeCarePage from './pages/DemeCarePage'
+import AccountPage from './pages/AccountPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -38,6 +38,7 @@ function App() {
           <Route path="/legal" element={<LegalNoticesPage />} />
           <Route path='/CGU' element={<CGUPage/>}/>
           <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/account" element={<AccountPage/>} />
 
           <Route path="/solutions/nexivia" element={<NexiViaPage />} />
           <Route path="/solutions/aegisplan" element={<AegisPlanPage />} />

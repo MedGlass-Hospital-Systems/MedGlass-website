@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, redirect, useLocation, useNavigate } from "react-router-dom";
 import { Icon } from "./Icon";
 import { cn } from "../../lib/utils/cn";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const links = [
   { to: "/pricing", label: "Tarifs" },
@@ -11,7 +12,17 @@ const links = [
 export function TopNav() {
   const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate(); 
   const [open, setOpen] = useState(false);
+  const {
+    isLoading, // Loading state, the SDK needs to reach Auth0 on load
+    isAuthenticated,
+    error,
+    loginWithRedirect: login, // Starts the login flow
+    logout: auth0Logout, // Starts the logout flow
+    user, // User profile
+  } = useAuth0();
+
 
   useEffect(() => {
     // Déclenchement au scroll pour la transition de la pilule
@@ -24,6 +35,23 @@ export function TopNav() {
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  const handleAuthAction = () => {
+    if (isAuthenticated) {
+      // On utilise navigate au lieu de redirect
+      navigate('/account'); 
+    } else {  
+      // On ajoute appState pour dire à Auth0 où revenir après le succès
+      login({ 
+        appState: { returnTo: '/account' },
+        // J'ai laissé votre paramètre d'origine si vous souhaitez forcer l'onglet inscription
+        authorizationParams: { screen_hint: "signup" } 
+      });
+    }
+  }
+
+  if (isLoading) return "Loading...";
+
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300">
@@ -119,12 +147,16 @@ export function TopNav() {
 
           {/* Call To Actions Bureau */}
           <div className="hidden md:flex items-center gap-4">
-            <Link
-              to="/login"
-              className="text-[17px] font-medium text-on-surface-variant hover:text-secondary hover:drop-shadow-[0_0_5px_rgba(140,143,240,0.5)] transition-all px-2"
-            >
-              Connexion
-            </Link>
+            <button
+                  onClick={() => {
+                    setOpen(false); // On ferme le menu
+                    handleAuthAction(); // On lance la logique
+                  }}
+                  className="w-full text-center px-2 py-3 rounded-xl text-[15px] font-medium text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors"
+                >
+                  {isAuthenticated ? "Mon Compte" : "Connexion"}
+                </button>
+          
             <a
               href="https://app.medglass.fr"
               className={cn(
