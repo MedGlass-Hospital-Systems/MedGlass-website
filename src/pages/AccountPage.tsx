@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const AccountPage = () => {
@@ -66,12 +65,7 @@ const AccountPage = () => {
           <h1 className="text-3xl font-bold">Mon Espace Client</h1>
           <p className="text-on-second mt-1">Gérez votre profil et vos souscriptions</p>
         </div>
-        <button 
-          onClick={handleLogout}
-          className="px-6 py-2 rounded-full border-2 border-outline hover:border-secondary hover:bg-surface-container-high transition-colors text-on-surface font-medium"
-        >
-          Se déconnecter
-        </button>
+        
       </header>
 
       {/* Contenu principal */}
@@ -80,7 +74,7 @@ const AccountPage = () => {
         {/* Colonne de gauche : Profil Utilisateur */}
         <div className="lg:col-span-1">
           <div className="bg-surface rounded-2xl border border-outline p-6 shadow-lg">
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col">
               {/* Photo de profil fournie par Auth0 */}
               <img 
                 src={user.picture} 
@@ -96,6 +90,54 @@ const AccountPage = () => {
                   <span className="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold">Vérifié</span>
                 </div>
               </div>
+               <div className='flex flex-col mt-4 mb-4'>
+                <p className='text-on-second mb-2'> Informations </p>
+              <button 
+                onClick={handleLogout}
+                className="px-6 py-2 text-left rounded-full border-2 border-outline hover:border-secondary hover:bg-surface-container-high transition-colors text-on-surface font-medium"
+              >
+                Modifier Profil
+              </button>
+              <button 
+                onClick={handleLogout}
+                className="px-6 py-2 mt-3 text-left rounded-full border-2 border-outline hover:border-secondary hover:bg-surface-container-high transition-colors text-on-surface font-medium"
+              >
+                Notification
+              </button>
+
+              <button 
+                onClick={handleLogout}
+                className="px-6 py-2 mt-3 text-left rounded-full border-2 border-outline hover:border-secondary hover:bg-surface-container-high transition-colors text-on-surface font-medium"
+              >
+                Paiement
+              </button>
+              </div>
+                
+              
+              <div className='flex flex-col mb-4'>
+                <p className='text-on-second mb-2'> Sécurité </p>
+                <button 
+                  onClick={handleLogout}
+                  className="px-6 py-2 text-left rounded-full border-2 border-outline hover:border-secondary hover:bg-surface-container-high transition-colors text-on-surface font-medium"
+                >
+                  Mot de Passe
+                </button>
+              </div>
+              
+              <button 
+                onClick={handleLogout}
+                className="px-6 py-2 mt-4  rounded-full border-2 border-outline hover:border-secondary hover:bg-surface-container-high transition-colors text-on-surface font-medium"
+              >
+                Se déconnecter
+              </button>
+              <button 
+                onClick={handleLogout}
+                className="px-6 py-2 mt-3 hover:bg-surface-container-high transition-colors text-red-700 font-medium"
+              >
+                Supprimer Compte
+              </button>
+
+
             </div>
           </div>
         </div>

@@ -50,7 +50,6 @@ export function TopNav() {
     }
   }
 
-  if (isLoading) return "Loading...";
 
 
   return (
