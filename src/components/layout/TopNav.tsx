@@ -83,7 +83,7 @@ export function TopNav() {
               <span className="text-on-surface">Glass</span>
             </div>
           </Link>
-
+          {/*Essai bordzel*/}
           {/* Navigation Bureau encapsulée dans la pilule */}
           <div className="hidden md:flex items-center gap-1 p-1.5 rounded-full">
 
