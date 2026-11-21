@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { GlassPanel } from "../components/ui/GlassPanel";
-import { Badge } from "../components/ui/Badge";
 import { Icon } from "../components/layout/Icon";
 
 export default function LegalNoticesPage() {
@@ -12,7 +11,7 @@ export default function LegalNoticesPage() {
         <img 
           src="/mountain.webp" 
           alt="Fond spatial MedGlass" 
-          className="absolute  object-cover h-full"
+          className="absolute  object-cover w-full h-full"
         />
       </div>
 
@@ -33,7 +32,7 @@ export default function LegalNoticesPage() {
           
           <h1 className="text-[44px] md:text-[60px] font-extrabold tracking-tight leading-[1.05] text-on-surface">
             Mentions{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary drop-shadow-[0_0_20px_rgba(140,143,240,0.3)]">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary drop-shadow-[0_0_20px_rgba(140,143,240,0.3)]">
               Légales
             </span>
           </h1>

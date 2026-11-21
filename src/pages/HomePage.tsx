@@ -77,9 +77,9 @@ export default function HomePage() {
   }, [images]);
 
   return (
-    <div className="bg-background text-on-background min-h-screen">
+    <div className="bg-background text-on-background min-h-dvh">
       
-      <section className="min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col justify-center relative overflow-hidden">
+      <section className="min-h-dvh pt-32 pb-20 px-6 md:px-12 flex flex-col justify-center relative overflow-hidden">
         {/* Fond Mesh Gradient */}
         <div className='absolute inset-0 z-0 h-full w-full opacity-80'>
           <MeshGradient
@@ -107,7 +107,7 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-2xl text-on-surface-variant mb-12 leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-2xl text-on-surface-variant leading-relaxed max-w-2xl">
               Optimisez la gestion de vos établissements avec notre suite d'outils interconnectés. NexiVia, AegisPlan et DemeCare réinventent votre quotidien pour vous concentrer sur l'essentiel : l'humain.
             </p>
           </div>
@@ -116,8 +116,7 @@ export default function HomePage() {
             <img 
               src="/logos.webp" 
               alt="Logos des différentes solutions" 
-              className='brightness-110 max-w-xl md:max-w-2xl lg:max-w-4xl h-auto object-contain drop-shadow-2xl'
-            />
+              className='brightness-110 w-full max-w-120 sm:max-w-sm md:max-w-2xl lg:max-w-4xl max-h-[35vh] md:max-h-none object-contain drop-shadow-2xl'            />
           </div>
         </div>
       </section>

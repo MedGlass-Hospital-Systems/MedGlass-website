@@ -75,7 +75,7 @@ ${formData.message}
         <img 
           src="/night.webp" // Assure-toi que le chemin est correct
           alt="Fond spatial MedGlass" 
-          className="object-cover h-full"
+          className="object-cover w-full h-full"
         />
 
       </div>

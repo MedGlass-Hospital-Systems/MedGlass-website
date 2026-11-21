@@ -37,7 +37,7 @@ export default function FeatureSection({ title, description, imageSrc, imageAlt,
       <div className={`w-full flex flex-col gap-[15%] items-center ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
         
         {/* Bloc Image */}
-        <div className={`w-full md:w-1/2 relative flex justify-center ${reverse ? 'md:justify-start' : 'md:justify-end'}`}>
+        <div className={`w-full md:w-1/2 relative mb-4 flex justify-center ${reverse ? 'md:justify-start' : 'md:justify-end'}`}>
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
@@ -53,7 +53,7 @@ export default function FeatureSection({ title, description, imageSrc, imageAlt,
         </div>
 
         {/* Bloc Texte (Glassmorphism) */}
-        <div className={`w-full md:w-1/2 relative flex justify-center ${reverse ? 'md:justify-end' : 'md:justify-start'}`}>
+        <div className={`w-full md:w-1/2 relative mt-4 flex justify-center ${reverse ? 'md:justify-end' : 'md:justify-start'}`}>
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
