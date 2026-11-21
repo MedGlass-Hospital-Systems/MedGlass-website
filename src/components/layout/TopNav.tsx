@@ -53,22 +53,22 @@ export function TopNav() {
 
         {/* Navigation Bureau encapsulée dans une pilule en verre */}
         <nav className="hidden md:flex items-center gap-1 p-1.5 rounded-full">
-          
+
           {/* Dropdown Solutions */}
           <div className="relative group">
             <button className="flex items-center gap-1.5 px-5 py-2 rounded-full text-[17px] font-medium text-on-surface-variant hover:text-secondary hover:bg-white/10 hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition-all duration-300">
-              Solutions 
-              <svg 
-                className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" 
-                aria-hidden="true" 
-                xmlns="http://www.w3.org/2000/svg" 
-                fill="none" 
+              Solutions
+              <svg
+                className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
               >
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7"/>
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7" />
               </svg>
             </button>
-            
+
             {/* Contenu du Dropdown (Liquid Glass) */}
             <div className="absolute top-full left-0 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 w-48 z-50">
               <ul className="p-2 flex flex-col gap-1 bg-surface-container/60 backdrop-blur-xl border border-outline rounded-2xl shadow-[0_8px_32px_0_rgba(3,6,28,0.8)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
@@ -90,7 +90,7 @@ export function TopNav() {
               </ul>
             </div>
           </div>
-          
+
           {/* Reste des liens classiques */}
           {links.map((link) => {
             const active = pathname === link.to || pathname?.startsWith(link.to + "/");
@@ -122,7 +122,7 @@ export function TopNav() {
             Connexion
           </Link>
           <a
-            href="https://app.medglass.fr"
+            href="https://medglass-hospital-systems.github.io/MedGlass-webapp/"
             className={cn(
               "px-5 py-2.5 rounded-full font-label-caps text-[11px] tracking-[0.08em] uppercase flex items-center gap-1.5 transition-all duration-300",
               // Dégradé de la navbar utilisant Primary (Vert) vers Secondary (Indigo)
@@ -157,18 +157,18 @@ export function TopNav() {
 
           <div className="relative group">
             <button className="flex px-4 py-3.5 rounded-xl text-[15px] font-medium transition-all duration-200 text-on-surface-variant hover:text-on-surface hover:bg-white/5 border border-transparent">
-              Solutions 
-              <svg 
-                className="mt-auto mb-auto mx-5 w-4 h-4 transition-transform duration-300 group-hover:rotate-180" 
-                aria-hidden="true" 
-                xmlns="http://www.w3.org/2000/svg" 
-                fill="none" 
+              Solutions
+              <svg
+                className="mt-auto mb-auto mx-5 w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
               >
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7"/>
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7" />
               </svg>
             </button>
-            
+
             {/* Contenu du Dropdown (Liquid Glass) */}
             <div className="absolute top-full left-0 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 w-48 z-50">
               <ul className="p-2 flex flex-col gap-1 bg-surface-container/60 backdrop-blur-xl border border-outline rounded-2xl shadow-[0_8px_32px_0_rgba(3,6,28,0.8)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
@@ -199,9 +199,9 @@ export function TopNav() {
                 to={link.to}
                 className={cn(
                   "px-4 py-3.5 rounded-xl text-[15px] font-medium transition-all duration-200",
-                  active 
+                  active
                     // Variante active sur mobile (fond translucide vert)
-                    ? "bg-primary/20 text-primary border border-primary/30" 
+                    ? "bg-primary/20 text-primary border border-primary/30"
                     : "text-on-surface-variant hover:text-on-surface hover:bg-white/5 border border-transparent",
                 )}
               >
@@ -209,7 +209,7 @@ export function TopNav() {
               </Link>
             );
           })}
-          
+
           {/* Séparateur vitré */}
           <div className="mt-2 pt-3 border-t border-outline flex flex-col gap-2">
             <Link
