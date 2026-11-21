@@ -157,7 +157,7 @@ export function TopNav() {
             </button>
 
             <a
-              href="https://app.medglass.fr"
+              href="https://medglass-hospital-systems.github.io/MedGlass-webapp/"
               className={cn(
                 "px-5 py-2.5 rounded-full font-label-caps text-[11px] tracking-[0.08em] uppercase flex items-center gap-1.5 transition-all duration-300",
                 "bg-gradient-to-r from-primary to-secondary text-on-primary",
@@ -260,7 +260,7 @@ export function TopNav() {
                   href="https://medglass-hospital-systems.github.io/MedGlass-webapp/"
                   className="mt-1 mb-1 px-4 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary text-[12px] font-label-caps tracking-[0.08em] uppercase text-center shadow-[0_4px_15px_rgba(118,208,151,0.3)] border border-white/20"
                 >
-                  Démo gratuite
+                  Démo Gratuite
                 </a>
               </div>
             </div>
